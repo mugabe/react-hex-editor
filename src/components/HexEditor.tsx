@@ -119,6 +119,7 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
   onFocus,
   onItemsRendered,
   onSetValue,
+  onSelectionChanged,
   overscanCount,
   readOnly = false,
   rowHeight,
@@ -259,6 +260,10 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
       selectionEnd,
       selectionDirection,
     });
+
+    if (typeof onSelectionChanged === 'function') {
+      onSelectionChanged(selectionStart, selectionEnd);
+    }
 
     try {
       if (inputRef.current) {

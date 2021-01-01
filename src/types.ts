@@ -55,6 +55,7 @@ export interface BaseHexEditorProps {
   onFocus?: (e: React.FocusEvent) => void,
   onSetValue?: (offset: number, value: number) => void,
   onItemsRendered?: (props: ListOnItemsRenderedProps) => void,
+  onSelectionChanged?: (start: number, end: number) => void,
   overscanCount?: number,
   readOnly?: boolean,
   showAscii?: boolean,
